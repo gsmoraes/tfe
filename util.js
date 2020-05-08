@@ -15,7 +15,7 @@ function range(start, end) {
 }
 
 function replaceRefs(text) {
-    return text.replace(/\[(.+?)\]/gm, (_, capture) => {
+    return text.replace(/\|(.+?)\|/gm, (_, capture) => {
         var trimmed = capture.replace(/' '/gm, '')
         var refNums = trimmed.split(',')
         var refNums2 = refNums.map(r => replaceRange(r))

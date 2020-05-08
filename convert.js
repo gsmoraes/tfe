@@ -10,5 +10,6 @@ files.forEach(f => {
 
     var text = fs.readFileSync(f, 'utf8')
     var citations = replaceRefs(text)
-    console.log(citations);
+
+    fs.writeFileSync(`./_${f}`, citations)
 })

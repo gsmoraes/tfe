@@ -27,28 +27,28 @@ describe('replaceRange', () => {
 
 describe('replaceRefs', () => {
     it('should replace a single reference', () => {
-        const txt = 'composé de [23] : l’aorte'
+        const txt = 'composé de |23| : l’aorte'
         const expected = `composé de \\cite{${refs[23]}} : l’aorte`
         const actual = replaceRefs(txt)
         expect(actual).to.be.equal(expected)
     })
 
     it('should replace a multiple references reference', () => {
-        const txt = 'l’anévrisme évolutif[4,8], sa dissection'
+        const txt = 'l’anévrisme évolutif|4,8|, sa dissection'
         const expected = `l’anévrisme évolutif\\cite{${refs[4]}, ${refs[8]}}, sa dissection`
         const actual = replaceRefs(txt)
         expect(actual).to.be.equal(expected)
     })
 
     it('should replace ranges', () => {
-        const txt = 'œsophagiennes[6–8]. Cette'
+        const txt = 'œsophagiennes|6–8|. Cette'
         const expected = `œsophagiennes\\cite{${refs[6]}, ${refs[7]}, ${refs[8]}}. Cette`
         const actual = replaceRefs(txt)
         expect(actual).to.be.equal(expected)
     })
 
     it('should replace ranges mixed with single refs', () => {
-        const txt = 'œsophagiennes[1,6–8,10,12–14,16]. Cette'
+        const txt = 'œsophagiennes|1,6–8,10,12–14,16|. Cette'
         const expected = `œsophagiennes\\cite{${refs[1]}, ${refs[6]}, ${refs[7]}, ${refs[8]}, ${refs[10]}, ${refs[12]}, ${refs[13]}, ${refs[14]}, ${refs[16]}}. Cette`
         const actual = replaceRefs(txt)
         expect(actual).to.be.equal(expected)
