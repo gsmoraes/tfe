@@ -1,0 +1,33 @@
+module.exports = {
+    references: {
+        1: 'gurvits_acute_2007',
+        2: 'abdullah_clinical_2019',
+        3: 'iuamoto_necrose_2015',
+        4: 'yaguchi_seven_2017',
+        5: 'tobisch_successful_2014',
+        6: 'minatoya_transmural_2000',
+        7: 'joubert_successful_2016',
+        8: 'porcu_esophageal_2005',
+        9: 'park_ischemic_2004',
+        10: 'rascanu_osophagusnekrose_2009',
+        11: 'de_praetere_esophageal_2010',
+        12: 'seto_tracheo-bronchial_2014',
+        13: 'koizumi_esophageal_2017',
+        14: 'abou-al-shaar_free_2016',
+        15: 'kaneda_delayed_2005',
+        16: 'elloway_foregut_1992',
+        17: 'watanabe_esophageal_1999',
+        18: 'lee_esophageal_1977',
+        19: 'lacombe_acute_1971',
+        20: 'patel_hard_2020',
+        21: 'chiesa_aorto-oesophageal_2010',
+        22: 'czerny_new_2014',
+        23: 'josse_posterior_2012',
+        24: 'papakonstantinou_oesophageal_2019',
+        25: 'evangelista_insights_2018',
+        26: 'rohatgi_role_2009',
+        27: 'paramesh_spontaneous_1995',
+        28: 'albrecht_case_2005',
+        29: 'sperini_case_nodate'
+    }
+}
