@@ -7,22 +7,22 @@ function replaceRange(text) {
 }
 
 function range(start, end) {
-    var ans = [];
+    const ans = []
     for (let i = start; i <= end; i++) {
-        ans.push(i);
+        ans.push(i)
     }
-    return ans;
+    return ans
 }
 
-function replaceRefs(text) {
-    return text.replace(/\|(.+?)\|/gm, (_, capture) => {
-        var trimmed = capture.replace(/' '/gm, '')
-        var refNums = trimmed.split(',')
-        var refNums2 = refNums.map(r => replaceRange(r))
-        var refNums3 = refNums2.join(',').split(',').map(r => +r)
-        var refNames = refNums3.map(r => references[+r]).join(', ')
-        return `\\cite{${refNames}}`
-    });
+function replaceRefs(text, field = '') {
+    return text.replace(/\[(.+?)\]/gm, (_, capture) => {
+        const trimmed = capture.replace(/' '/gm, '')
+        const refNums = trimmed.split(',')
+        const refNums2 = refNums.map(r => replaceRange(r))
+        const refNums3 = refNums2.join(',').split(',').map(r => +r)
+        const refNames = refNums3.map(r => references[+r]).join(', ')
+        return `\\cite${field}{${refNames}}`
+    })
 }
 
 module.exports = {
